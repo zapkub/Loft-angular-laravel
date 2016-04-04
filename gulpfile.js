@@ -1,7 +1,7 @@
 var elixir = require('laravel-elixir');
 var Task = elixir.Task;
-var browserify = require('laravel-elixir/node_modules/browserify');
-var babelify = require('laravel-elixir/node_modules/babelify');
+var browserify = require('browserify');
+var babelify = require('babelify');
 var path = require('path');
 var gulp = require('gulp');
 var conf = require('./gulp/conf.js');
@@ -10,7 +10,7 @@ var useref = require('gulp-useref');
 var _ = require('lodash');
 var ngAnnotate = require('gulp-ng-annotate');
 var replace = require('gulp-replace');
-var source     = require('laravel-elixir/node_modules/vinyl-source-stream');
+var source     = require('vinyl-source-stream');
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management

@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="css/app.css" media="screen" title="no title" charset="utf-8">
 
   </head>
   <body>
-    <div id="ui-main">
     @yield('content')
-  </div>
   </body>
 
 {{-- Inject Javascript Vendor --}}
