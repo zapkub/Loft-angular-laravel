@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('{type}/{name}',function($type,$name){
-  return view($type.'/'.$name);
+Route::get('templates/{name}',function($name){
+  return view('templates/'.$name);
+});
+Route::get('templates/layouts/{name}',function($name){
+  return view('layouts/'.$name);
 });

@@ -39,7 +39,7 @@ elixir(function(mix) {
   elixir.config.js.browserify.transformers.push({
     name: 'aliasify',
     options: {}
-  });
+  })  ;
   mix.sass('app.scss')
     .browserifyAnotate('index.module.js','all.js','public/js/')
 
