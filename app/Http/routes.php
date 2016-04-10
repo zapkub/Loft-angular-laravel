@@ -11,12 +11,11 @@
 |
 */
 
+
+Route::get('app/{controller}/{name}',function($controller,$name){
+  return view('app/'.$controller.'/'.$name);
+});
+
 Route::get('/', function () {
     return view('index');
-});
-Route::get('templates/{name}',function($name){
-  return view('templates/'.$name);
-});
-Route::get('templates/layouts/{name}',function($name){
-  return view('layouts/'.$name);
 });

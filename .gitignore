@@ -6,3 +6,5 @@ Homestead.json
 .env
 /public/css
 /public/js
+/resources/views/app
+/resources/views/index.blade.php

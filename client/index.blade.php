@@ -7,12 +7,17 @@
 
   </head>
   <body>
-    @yield('content')
+    <base href="weinternshipx/">
+    <header></header>
+
+    {{-- Ui router view --}}
+    <div ui-view />
   </body>
 
-{{-- Inject Javascript Vendor --}}
-  <script src="js/vendor.js"></script>
-{{-- End Javascript Vendor --}}
+  <!-- build:js ../../public/js/vendor.js -->
+  <!-- bower:js -->
+  <!-- endbower -->
+  <!-- endbuild -->
 
 
   {{-- application script with module chain--}}
