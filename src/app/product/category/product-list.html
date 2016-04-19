@@ -1,0 +1,78 @@
+
+<div id="productList" class="">
+  <div class="option">
+    <div class="view-option">
+      <a class="btn"
+        ui-sref="category.subcategory-grid({category:ctrl.params.category,subcategory:ctrl.params.subcategory?ctrl.params.subcategory:'all',page:1})"
+      ><i class="fi-thumbnails"></i> Grid</a><a
+        ui-sref="category.subcategory-list({category:ctrl.params.category,subcategory:ctrl.params.subcategory?ctrl.params.subcategory:'all',page:1})"
+        class="btn active"><i class="fi-list"></i> List</a>
+    </div>
+
+    <div class="sorting-option">
+      <label class="dropdown">
+        <select id="sorting">
+          <option value="product_name">Name</option>
+          <option value="price">Price</option>
+        </select>
+      </label>
+    </div>
+  </div>
+  <div id="product-list">
+    <div class="product-list-wrap">
+      <div class="product-list-item" ng-repeat="item in ctrl.product_data.products">
+        <div class="product-list-item-wrap">
+          <div class="thumbnail-images">
+            {{item.photo}}
+          </div>
+          <div class="product-detail">
+            <div class="title-wrap">
+              <a ui-sref="category.product-detail({product_id:item.product_id})">{{item.product_name}}</a>
+            </div>
+            <!-- แรนด้อมดาวไปก่อนใน db ไม่มี -->
+            <div class="star-wrap" ng-init="star = 3">
+              <i ng-repeat="item in _.range(star)" class="fi-star active"></i>
+              <i ng-repeat="item in _.range(5-star)" class="fi-star"></i>
+              <!--<i ng-repeat="item in _.range(star)" class="glyphicon glyphicon-star"></i>-->
+              <!--<i ng-repeat="item in _.range(5-star)" class="glyphicon glyphicon-star-empty"></i>-->
+            </div>
+            <div class="detail-wrap">
+              {{item.detail}}
+            </div>
+            <div class="basic-button">
+              more detail
+            </div>
+          </div>
+          <div class="product-stock">
+            <div class="price-wrap">
+              {{item.retail_price | currency:"THB":2}}
+            </div>
+            <!--<div class="like-wrap">-->
+              <!--<i class="glyphicon glyphicon-heart-empty"></i>-->
+            <!--</div>-->
+            <div class="" ng-init="item.selected_option" ng-if="item.product_option_group.option">
+              <select class="" name="" ng-model="item.selected_option" ng-options="option.option_name for option in item.product_option_group.option">
+
+              </select>
+            </div>
+            <div class="quatity-wrap">
+              <!-- Add to cart by pass qty to user cart -->
+              <div>
+                  สั่งขั้นต่ำ : {{item.minimum_qty}}
+              </div>
+              <div>
+                  สต๊อก : {{item.qty}}
+              </div>
+              <loft-input ng-model="item.order_amount" max="item.qty" min="item.minimum_qty"></loft-input>
+            </div>
+            <div class="basic-button add-to-cart" ng-click="ctrl.addProductToCart(item,item.order_amount,$event)">
+              add to cart
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="1" ng-change="ctrl.pageChanged(ctrl.params.category,ctrl.params.subcategory,currentPage,'list')"></uib-pagination>
+
+</div>

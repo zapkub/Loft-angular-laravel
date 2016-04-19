@@ -1,0 +1,176 @@
+@import '../_constant.scss';
+#banner {
+  background: #EEE;
+  min-height: 0 !important;
+  height: 300px;
+}
+#category {
+  flex: 1 1 auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 500px;
+  #breadcrumb {
+    margin-bottom: 20px;
+  }
+  #content {
+    .box {
+      border: 1px solid #DDD;
+      padding: 14px;
+      margin-bottom: 20px;
+      .headline {
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 16px;
+        margin-bottom: 14px;
+      }
+    }
+    // .sidebar-container {
+    //   position: relative;
+    //   transition: 0.22s;
+    //   .sidebar-hide {
+    //     position: absolute;
+    //     right: 0;
+    //     top: 50%;
+    //     transform-origin: top right;
+    //     transform: rotate(90deg) translate(-50%,-100%);
+    //   }
+    //   @media screen and (max-width:1024px) {
+    //     position: absolute;
+    //     background: white;
+    //     z-index: 99;
+    //     // transform:translate(0,-50%);
+    //     left: 0;
+    //     box-shadow: 0 1px 3px grey;
+    //     padding: 20px;
+    //     &.hideLeft {
+    //       transform: translate(-100%,0);
+    //     }
+    //   }
+    // }
+    #sidebar {
+      .category-list {
+        .list {
+          > .item {
+            margin-top: 8px;
+            > a {
+              text-transform: uppercase;
+            }
+            .sub-category-list {
+              display: none;
+              margin-top: 4px;
+              > .item {
+                font-size: 12px;
+                padding: 6px 0 6px 4px;
+                i {
+                  color: #666;
+                  margin-right: 4px;
+                }
+                &:not(:last-child) {
+                  border-bottom: 1px solid #F3F3F3;
+                }
+              }
+            }
+            &.active {
+              > a {
+                color: $primary-text-color;
+                font-weight: bold;
+              }
+              .sub-category-list {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+      #best-seller {
+        @media screen and (max-width:1024px) {
+          display: none;
+        }
+        .product-list {
+          .item {
+            display: flex;
+            .product-img {
+              flex-grow: 1;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 75px;
+              min-width: 75px;
+              max-width: 75px;
+              height: 75px;
+              background: #EEE;
+              img {
+                width: 90%;
+              }
+            }
+            .product-info {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-start;
+              flex-grow: 3;
+              padding-left: 10px;
+              .product-name {
+                text-transform: uppercase;
+                font-size: 13px;
+                margin-bottom: 4px;
+              }
+              .product-price {
+                font-size: 20px;
+              }
+            }
+            &:not(:last-child) {
+              margin-bottom: 14px;
+            }
+          }
+        }
+      }
+    }
+    .option {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      .view-option {
+        a.btn {
+          border: 1px solid #DDD;
+          border-radius: 0;
+          text-transform: uppercase;
+          padding: 6px 16px;
+          transition: all 0.2s;
+          i {
+            font-size: 16px;
+            margin-right: 6px;
+          }
+          &:not(:last-child) {
+            border-right: 0;
+          }
+          &.active {
+            border-color: #000;
+            background: #000;
+            color: #FFF;
+          }
+          &:not(.active):hover {
+            background: #F3F3F3;
+          }
+        }
+      }
+      .sorting-option {
+        label.dropdown {
+          select {
+            padding-left: 100px;
+            direction: rtl;
+          }
+          &:before {
+            content: 'SORT BY: ';
+            position: absolute;
+            top: 50%;
+            left: 14px;
+            transform: translate(0, -55%);
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

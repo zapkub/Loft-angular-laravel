@@ -1,0 +1,118 @@
+<!-- Deprect next commit <div class="transition-container">
+  <div id="category">
+    <div class="catagory-list-container">
+      <div class="product-category-header">Product Category</div>
+      <div class="category-list-wrap" ng-repeat="category in ctrl.categoryList">
+        <div class="item-category">
+          <a ui-sref="category.default({category:category.url,page:1})">{{category.category_name}}</a>
+          <div class="subcategory-list-wrap">
+            <div class="item-subcategory" ng-repeat="subcategory in category['sub_categories']">
+              <a ui-sref="category.subcategory-grid({category:category.url,subcategory:subcategory.url,page:1})">{{subcategory.category_name}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="list">
+      </div>
+    </div>
+    <div class="product-list-container">
+      <div ui-view></div>
+    </div>
+  </div>
+
+
+
+</div> -->
+
+
+<div id="banner">
+  <div class="container">
+
+  </div>
+</div>
+
+<div id="category" class="container">
+  <div id="breadcrumb">
+    <a ui-sref="home">Home</a>
+    <span class="arrow">></span>
+    <a style="text-transform:capitalize" data-ui-sref-opts="{reload: true}" ui-sref="category.default({category:ctrl.params.category,page:1})">{{ctrl.params.category}}</a>
+    <span class="arrow">></span>
+    <span class="active">Kitchen Furniture</span>
+  </div>
+
+  <div id="content" class="row">
+    <div class="col-sm-3 sidebar-container" ng-class="{hideLeft:hideSidebar}">
+      <!-- <div class="sidebar-hide" ng-click="hideSidebar = !hideSidebar">
+        Show Category
+      </div> -->
+      <div id="sidebar">
+        <div class="category-list box">
+          <div class="headline">Product Categories</div>
+
+          <div class="list">
+            <div class="item" ng-class="{ 'active' : category.url == 'fashion' }" ng-repeat="category in ctrl.categoryList">
+              <a ui-sref="category.default({category:category.url,page:1})">
+                {{ category.category_name }}
+              </a>
+
+              <div class="sub-category-list">
+                <div class="item" ng-repeat="subcategory in category.sub_categories">
+                  <i class="fi-play"></i>
+
+                  <a ui-sref="category.subcategory-grid({category:category.url,subcategory:subcategory.url,page:1})">
+                    {{ subcategory.category_name }}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="best-seller" class="box">
+          <div class="headline">Best Seller</div>
+
+          <div class="product-list">
+            <div class="item">
+              <div class="product-img">
+                <img src="assets/images/new-arrivals-01.png" />
+              </div>
+
+              <div class="product-info">
+                <div class="product-name">Uptown & Light</div>
+                <div class="product-price">2,290 THB</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="product-img">
+                <img src="assets/images/new-arrivals-01.png" />
+              </div>
+
+              <div class="product-info">
+                <div class="product-name">Uptown & Light</div>
+                <div class="product-price">2,290 THB</div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="product-img">
+                <img src="assets/images/new-arrivals-01.png" />
+              </div>
+
+              <div class="product-info">
+                <div class="product-name">Uptown & Light</div>
+                <div class="product-price">2,290 THB</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-9">
+
+        <div ui-view></div>
+    </div>
+
+
+  </div>
+</div>

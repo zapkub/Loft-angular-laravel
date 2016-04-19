@@ -1,0 +1,55 @@
+<div id="header-wrap" class="container" >
+  <!-- click-outside="showBag = false" outside-if-not="delete-button" -->
+  <div id="logo">
+    <a href="/#"><img src="assets/images/logo.png" alt=""/></a>
+  </div>
+    <div class="show-menu-mobile-button">
+      <i class="fi-list" ng-click="mobileHide = !mobileHide"></i>
+    </div>
+  <nav ng-class="{hideMenu:!mobileHide}">
+    <div class="search-container">
+      <input type="text" placeholder="Ex. Doraemon, Kumamon, Stormtrooper helmet, etc...">
+    </div>
+    <a class="menu-item" ui-sref="home">
+      <span>home</span>
+    </a>
+    <a class="menu-item" ui-sref="aboutus">
+      <span>About Us</span>
+    </a>
+    <a class="menu-item" ui-sref="category-list">
+      <span>Products</span>
+    </a>
+    <a class="menu-item" ui-sref="blog">
+      <span>Blog</span>
+    </a>
+    <a class="menu-item" ui-sref="contactus">
+      <span>Contact Us</span>
+    </a>
+    <a class="menu-item search-menu" href="#">
+      <i class="fi-magnifying-glass"></i>
+    </a>
+    <a class="menu-item" ui-sref="member">
+      <i class="fi-torso"></i>
+    </a>
+    <div class="menu-item cart" ng-init="showBag = true" ng-class="{'active':showBag}" click-outside="showBag" >
+      <i ng-click="showBag = !showBag" class="fi-shopping-cart">
+        <div ng-if="cartAmount" class="item-amount">
+          {{cartAmount}}
+        </div>
+      </i>
+      <div ng-if="showBag" class="hover-pop-wrap">
+        <h3>Shopping Bag</h3>
+        <cart></cart>
+        <div class="cart-option">
+          <a  ui-sref="member.cart" class="view-cart-btn basic-button">
+            View Cart
+          </a>
+          <div class="checkout-btn basic-button">
+            Check out
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+</div>

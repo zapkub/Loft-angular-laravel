@@ -1,0 +1,34 @@
+<div class="" id="member-login">
+  <div class="container login" >
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="wrap">
+          <img class="logo" src="assets/images/logo-hd.jpg">
+          <div class="form-group">
+              <h1>It's a good day to shopping<small></small></h1>
+            <div>
+              <input class="form-control" ng-model="email" placeholder="Email" type="email">
+            </div>
+            <div class="">
+              <input class="form-control" ng-model="password" placeholder="Password" type="password">
+            </div>
+            <div ng-if="!ctrl.isLoading()" ng-click="ctrl.getLogin()" class="basic-button login">Log In</div>
+            <div class="checking-container" ng-if="ctrl.isLoading()" style="position:relative">
+              Loading..
+              <div class="spinner"></div>
+            </div>
+            <a href="#" ui-sref="category-list">Continue as guest</a>
+            |
+            <a href="#">Forgot password? </a>
+
+          </div>
+          <p class="signup">
+             Don't have an account?   <a href="#">Sign Up</a>
+             <br>
+             <a ng-click="ctrl.getToken()">Debug token</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

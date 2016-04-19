@@ -1,0 +1,101 @@
+#aboutus{
+  flex: 1 1 auto;
+  padding-top: 20px;
+
+  .banner{
+    margin-top: 20px;
+
+    img{
+      width: 100%;
+    }
+  }
+
+  .promo-banner{
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    > div .block{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 275px;
+
+      img{
+        width: 35%;
+      }
+    }
+
+    div:first-child .block{
+      background: #f6f6f6;
+      border: 1px solid #E3E3E3;
+    }
+
+    div:nth-child(2) .block{
+      background: $primary-color;
+    }
+
+    div:nth-child(3) .block{
+      background: #f57979;
+
+      img{
+        width: 69%;
+      }
+    }
+  }
+
+  #aboutus-content{
+    margin-bottom: 20px;
+
+    .headline{
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .content{
+      font-family: 'Helvethaica-light', sans-serif;
+      font-size: 20px;
+      line-height: 26px;
+      color: #666;
+    }
+  }
+
+  #store{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #DDD;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+
+    .item{
+      flex: 1 1 auto;
+
+      .store-name{
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .store-img{
+        margin: 10px 0;
+
+        img{
+          width: 100%;
+        }
+      }
+
+      .store-address,
+      .store-opening-hour,
+      .store-tel{
+        font-size: 12px;
+        letter-spacing: 0.4px;
+      }
+
+      .store-opening-hour{
+        margin: 10px 0;
+      }
+
+      &:not(:last-child){
+        margin-right: 15px;
+      }
+    }
+  }
+}

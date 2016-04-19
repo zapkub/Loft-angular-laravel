@@ -1,0 +1,18 @@
+<!-- style อยู่ที่ product.scss -->
+<div id="category-list" class="transition-container">
+  <div class="highlight">
+    <div class="headline">Our Products</div>
+    <div class="sub-headline">We deliver you the best product based on your everyday lifestyle</div>
+  </div>
+
+  <div class="list container">
+    <div class="col-sm-6 col-md-4" ng-repeat="category in ctrl.categoryList">
+      <a ui-sref="category.default({category: category.url, page: 1})" class="item">
+        <img src="{{ category.img_name }}" />
+        <div class="category-name">
+          {{ category.category_name }}
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

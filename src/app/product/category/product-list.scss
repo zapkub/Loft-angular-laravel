@@ -1,0 +1,83 @@
+#productList {
+  .product-list-wrap {
+    .product-list-item {
+      padding: 20px;
+      margin: 20px 0;
+      height: auto;
+      border: $border-grey 1px solid;
+      .product-list-item-wrap {
+        display: flex;
+        align-items: stretch;
+        @media screen and (max-width:1024px) {
+          flex-wrap: wrap;
+        }
+        .thumbnail-images {
+          flex: 0 0 200px;
+          height: 200px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: $lightgrey;
+          color: white;
+          @media screen and (max-width:1024px) {
+            flex: 0 0 150px;
+            height: 150px;
+          }
+        }
+        .product-detail {
+          flex: 1 1 auto;
+          padding: 0 20px;
+
+          .title-wrap {
+            font-size: 24px;
+            color: $primary-text-color;
+          }
+          .star-wrap {
+            display: flex;
+            margin-bottom: 14px;
+            font-size: 20px;
+            i {
+              color: #DDD;
+              margin-right: 4px;
+              &.active {
+                color: $primary-color;
+              }
+            }
+          }
+          .detail-wrap {
+            font-size: 13px;
+            line-height: 24px;
+          }
+        }
+        .product-stock {
+          flex: 0 0 200px;
+          border-left: 1px $border-grey solid;
+          padding-left: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: stretch;
+          flex-direction: column;
+          @media screen and (max-width:1024px) {
+            flex: 0 0 150px;
+          }
+          @media screen and (max-width:768px){
+            border :none;
+            padding:0 10px;
+            justify-content: center;
+            text-align: center;
+          }
+          .price-wrap {
+            font-size: 22px;
+            color: $black;
+          }
+          .like-wrap {
+            color: $grey;
+          }
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

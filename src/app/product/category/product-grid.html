@@ -1,0 +1,40 @@
+<div id="product-grid">
+  <div class="option">
+
+    <div class="view-option">
+      <a class="btn active"
+        ui-sref="category.subcategory-grid({category:ctrl.params.category,subcategory:ctrl.params.subcategory?ctrl.params.subcategory:'all',page:1})"
+      ><i class="fi-thumbnails"></i> Grid</a><a
+        ui-sref="category.subcategory-list({category:ctrl.params.category,subcategory:ctrl.params.subcategory?ctrl.params.subcategory:'all',page:1})"
+        class="btn"><i class="fi-list"></i> List</a>
+    </div>
+    <div class="sorting-option">
+      <label class="dropdown">
+        <select id="sorting">
+          <option value="created_date">Newest</option>
+          <option value="product_name">Name</option>
+          <option value="price">Price</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <div class="list row">
+    <div class="msg" ng-if="ctrl.product_data.msg">No products in this category</div>
+
+    <div class="item col-sm-4" ng-repeat="product in ctrl.product_data.products" ng-if="!ctrl.product_data.msg">
+      <a ui-sref="category.product-detail({product_id:product.product_id})" class="product-img">
+        <img src="assets/images/new-arrivals-01.png" />
+      </a>
+
+      <div class="product-info">
+        <a ui-sref="category.product-detail({product_id:product.product_id})" class="product-name">{{ product.product_name }}</a>
+        <div class="product-price">{{ product.retail_price | currency:"THB":2}} </div>
+      </div>
+    </div>
+  </div>
+  <!-- ng-change="ctrl.pageChanged(ctrl.params.category,ctrl.params.subcategory,ctrl.params.page,'list')" -->
+  <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="1" ng-change="ctrl.pageChanged(ctrl.params.category,ctrl.params.subcategory,currentPage,'grid')"></uib-pagination>
+
+
+</div>

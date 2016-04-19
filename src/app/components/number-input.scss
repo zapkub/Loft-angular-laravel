@@ -1,0 +1,23 @@
+loft-input{
+  display: flex;
+  padding: 8px 12px;
+  border:1px $border-grey solid;
+  margin:10px 0;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  .loft-input-label{
+    flex:1 1 auto;
+  }
+  .loft-input {
+    flex:0 0 30px;
+    text-align: center;
+    color:$grey;
+  }
+  .loft-input-data {
+    flex:0 0 30px;
+    text-align: center;
+    color:$black;
+  }
+}

@@ -1,0 +1,33 @@
+<div class="container" style="" id="member">
+  <div class="checking-container" ng-if="ctrl.isLoading()">
+
+  <div class="spinner"></div>
+
+  </div>
+
+  <div id="breadcrumb">
+    <a href="#">Home</a>
+    <span class="arrow">></span>
+
+    <span class="active">Shopping Cart</span>
+  </div>
+
+  <div class="wrap" ng-if="!ctrl.isLoading()">
+    <div class="member-main">
+      <div ui-view></div>
+    </div>
+
+    <div class="member-menu">
+      <div class="member-menu-container">
+        <div class="menu-wrap">
+          <h3>Account Detail</h3>
+          <a ui-sref="member.cart">Cart</a>
+          <hr>
+          <button ng-click="ctrl.getLogout()">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,488 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+$navbar-inverse-link-color: #5AADBB;
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+@import './_constant.scss';
+.debug-data{
+  white-space: normal;
+  word-wrap: break-word;
+  margin-top:500px;
+  max-width: 500px;
+}
+body{
+//  font-family: 'HelveticaNeue',sans-serif;
+  font-family: 'Open Sans','HelveticaNeue',sans-serif;
+  color: $primary-text-color;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  display: flex;
+  min-height: 100vh;
+}
+
+a{
+  color: #666;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover{
+    color: #999;
+    text-decoration: none;
+  }
+}
+label.dropdown {
+  font-weight: normal;
+
+  select {
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #DDD;
+    border-radius: 0;
+    background: #FFF;
+    padding: 8px 14px;
+    padding-right: 34px;
+    appearance: none;
+  }
+
+  &:after {
+    content: '<>';
+    font: 11px "Consolas", monospace;
+    color: #aaa;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg) translate(-65%, 0);
+    right: 10px;
+    top: 50%;
+    padding: 0 0 2px;
+    border-bottom: 1px solid #ddd;
+    position: absolute;
+    pointer-events: none;
+  }
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.input{
+  border: 1px solid #DDD;
+  padding: 10px 14px;
+}
+.input-block{
+  display: block;
+  width: 100%;
+}
+
+#breadcrumb{
+  color: #999;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #DDD;
+  font-size: 12px;
+
+  a{
+    color: #999;
+
+    &:hover{
+      color: #333;
+    }
+  }
+
+  span:not(.active){
+    margin: 0 4px;
+  }
+
+  .active{
+    color: #000;
+    font-weight: bold;
+  }
+}
+
+.pagination {
+  width: 100%;
+  text-align: right;
+  padding: 20px 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    margin: 0 1px;
+
+    > a {
+      padding: 8px 14px;
+      color: #666;
+      border: 1px solid #DDD;
+      border-radius: 0;
+      transition: all 0.2s;
+
+      &:hover {
+        border-color: #CCC;
+        background: #F3F3F3;
+        color: #333;
+      }
+    }
+
+    &.active {
+      a {
+        border: 1px solid #000;
+        background: #000;
+        color: #FFF;
+
+        &:hover{
+          background: #000;
+          border: 1px solid #000;
+          color: #FFF;
+        }
+      }
+    }
+  }
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.thumbnail {
+  height: 200px;
+
+  img.pull-right {
+    width: 50px;
+  }
+}
+
+#view{
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  // position: absolute;
+  padding-top: 81px;
+  width: 100%;
+
+  > div:first-child{
+    min-height: 600px;
+  }
+
+  #home{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+
+    #top-banner{
+      background: #FFFBEF;
+    }
+
+    #promo-banner{
+      margin: 30px auto;
+      background: #FFF;
+
+      .row{
+        margin: 0 -7px;
+
+        > div{
+          padding: 0 7px;
+
+          &:not(:last-child) {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+
+    #new-arrivals{
+      display: flex;
+
+      > div{
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+      }
+
+      .headline{
+        background: $primary-color;
+        color: $primary-text-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+
+        .top-headline{
+          font-size: 20px;
+        }
+
+        .main-headline{
+          font-size: 36px;
+          line-height: 24px;
+        }
+
+        .sub-headline{
+          margin-top: 10px;
+          font-size: 12px;
+        }
+      }
+
+      .item{
+        display: flex;
+        flex-direction: column;
+        background: #F6F6F6;
+
+        .product-img {
+          display: flex;
+          flex: 1 1 auto;
+          min-height: 220px;
+          text-align: center;
+
+          img {
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            margin: 0 auto;
+            width: 75%;
+          }
+        }
+
+        .product-info{
+          display: flex;
+          flex-direction: row;
+          align-self: flex-end;
+          width: 100%;
+
+          .product-name{
+            flex: 1 1 auto;
+            justify-content: flex-start;
+            padding: 10px 14px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+
+            .product-price{
+              margin-left: 14px;
+            }
+          }
+
+          .shop-now-btn{
+            padding: 10px 14px;
+            background: $primary-color;
+            font-weight: bold;
+            align-items: center;
+          }
+        }
+
+        &:nth-child(odd){
+          background: #EBEBEB;
+        }
+      }
+    }
+
+    #home-member{
+      padding: 40px 0;
+      color: #333;
+
+      .container {
+        display: flex;
+        padding: 60px 0;
+        background: #F7F7F7;
+
+        .banner{
+          align-self: center;
+          text-align: center;
+
+          img{
+            width: 90%;
+            max-width: 385px;
+          }
+        }
+
+        .content{
+          align-self: flex-start;
+
+          .headline{
+            font-size: 36px;
+            font-weight: bold;
+          }
+
+          .sub-headline{
+            font-size: 20px;
+          }
+
+          .form{
+            margin-top: 10px;
+
+            .input{
+              margin-bottom: 10px;
+            }
+
+            .btn{
+              margin-top: 4px;
+              background: #333;
+              border-radius: 0;
+              color: #FFF;
+              padding: 10px 0;
+              transition: background 0.2s;
+
+              &:hover{
+                background: #555;
+              }
+            }
+          }
+
+          .promo-banner{
+            margin-top: 30px;
+
+            img{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    #home-recommended{
+      margin-bottom: 40px;
+
+      .headline{
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+      }
+
+      .sub-headline{
+        text-align: center;
+        font-size: 12px;
+        color: #666;
+      }
+
+      .product-list{
+        margin-top: 30px;
+
+        .item{
+          margin-bottom: 40px;
+          .product-img{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f5f5f5;
+
+            img{
+              width: 75%;
+            }
+
+            &:after{
+              content: '';
+              display: block;
+              padding-bottom: 100%;
+            }
+          }
+
+          .product-info{
+            margin-top: 20px;
+            text-align: center;
+
+            .product-name{
+              text-transform: uppercase;
+              font-weight: bold;
+              font-size: 16px;
+            }
+
+            .product-price{
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.basic-button{
+  border: $border-grey 1px solid;
+  padding:10px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  margin:15px 0px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.4s;
+  position: relative;
+  &.working{
+    pointer-events: none;
+
+    &:before{
+      content:"working...";
+      position: absolute;
+      background: $border-grey !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      left:0;
+      top:0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &:hover{
+    background: #F3F3F3;
+  }
+
+  &:hover,
+  &:active,
+  &:focus{
+    text-decoration: none;
+  }
+
+  &.add-to-cart{
+    background: $primary-color;
+    border:none;
+    color: $primary-text-color;
+    font-weight: bold;
+
+    &:hover{
+      background: $primary-hover-color;
+    }
+  }
+  &.login {
+        @extend .add-to-cart;
+        width: 100%;
+        font-size:28px;
+        text-transform: capitalize;
+        &:hover{
+
+        }
+  }
+}
+#nprogress .bar {
+    background: $black;
+
+}
+#nprogress .spinner-icon{
+  border-top-color: $black;
+  border-left-color: $black;
+}
+*:focus{
+  outline: none !important;
+}
+
+.toast-add-to-cart{
+  color:$black;
+  background:$primary-color;
+  box-shadow: none !important;
+  border-radius: 0px !important;
+  border:1px solid $primary-color ;
+}
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

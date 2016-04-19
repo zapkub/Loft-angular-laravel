@@ -1,0 +1,57 @@
+
+<div id="cart" class="container">
+  <div class="headline">
+    <i class="fi-shopping-cart"></i> Shopping Cart
+  </div>
+
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Product Name</th>
+          <th class="text-right">Price</th>
+          <th class="text-right">Quantity</th>
+          <th class="text-right">SubTotal</th>
+          <th class="text-center">Remove</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="item in ctrl.cart" ng-if="ctrl.cart.length > 0">
+          <td class="product-img text-center"><img src="assets/images/new-arrivals-01.png" /></td>
+          <td>
+            <h3>{{item.product_name}}</h3>
+            <p>
+              {{item.product_detail}}
+            </p>
+          </td>
+          <td class="text-right">{{item.retail_price | currency:"THB":2}}</td>
+          <td class="text-right"><input type="number" ng-model="item.amount" name="qty" class="qty" /></td>
+          <td class="text-right">{{item.retail_price * item.amount | currency:"THB":2}}</td>
+          <td class="text-center">
+            <a href="#" class="del-btn"><i class="fi-x"></i></a>
+          </td>
+        </tr>
+
+
+        <tr ng-if="ctrl.cart.length > 0">
+          <td colspan="3"></td>
+          <td class="text-center">
+            <div class="btn update-btn">Update QTY</div>
+          </td>
+          <td class="text-right bold">100.00 THB</td>
+          <td></td>
+        </tr>
+
+        <tr ng-if="ctrl.cart.length <= 0">
+          <td colspan="6" class="text-center">There is no item in the cart.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="option">
+    <a ui-sref="category-list" class="btn continue-shopping-btn">Continue Shopping</a>
+    <a href="#" class="btn checkout-btn">Proceed to Checkout</a>
+  </div>
+</div>

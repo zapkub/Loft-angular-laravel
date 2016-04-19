@@ -1,0 +1,145 @@
+<div id="product-detail">
+  <div class="product-main row">
+    <div class="col-sm-6">
+      <div class="product-img">
+        <img src="assets/images/new-arrivals-01.png" />
+      </div>
+
+      <div class="product-thumbs">
+        <div class="item">
+          <img src="assets/images/new-arrivals-01.png" />
+        </div>
+
+        <div class="item">
+          <img src="assets/images/new-arrivals-01.png" />
+        </div>
+
+        <div class="item">
+          <img src="assets/images/new-arrivals-01.png" />
+        </div>
+
+        <div class="item">
+          <img src="assets/images/new-arrivals-01.png" />
+        </div>
+      </div>
+    </div>
+
+    <div class="product-info col-sm-6">
+      <div class="product-name">{{ product.product_name }}</div>
+
+      <div class="product-review-points">
+        <i class="fi-star active"></i><i class="fi-star active"></i><i class="fi-star active"></i><i class="fi-star active"></i><i class="fi-star"></i>
+      </div>
+
+      <div class="product-short-description">
+        {{ product.detail }}
+      </div>
+
+      <div class="product-price">
+        <span class="price">{{ product.retail_price }} THB</span>
+        <span class="orig-price">100.00 THB</span>
+      </div>
+
+      <div class="row">
+        <div class="product-size col-sm-7">
+
+          <label class="dropdown" ng-if="product.product_option_group.option.length">
+            <div class="before">
+              {{product.product_option_group.group_name}}
+            </div>
+            <select class="" name="" ng-model="product.selected_option" ng-options="option.option_name for option in product.product_option_group.option">
+
+          </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="product-qty col-sm-6" ng-init="order_amount = 0;">
+          stock available : {{product.product_option_group.option[product.selected_option].qty}}
+          <loft-input ng-model="order_amount" data-max="product.product_option_group.option[product.selected_option].qty"></loft-input>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="product-option col-sm-8">
+          <div class="basic-button add-to-cart btn-block" ng-click="ctrl.addProductToCart(product,order_amount)">Add to Cart</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="product-more-info" class="box">
+    <ul class="tabs">
+      <li class="item active">Description</li>
+      <li class="item">Reviews</li>
+      <li class="item">Tags</li>
+    </ul>
+
+    <div class="content">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+        esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+        in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+
+      <p>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+        sunt explicabo.
+      </p>
+    </div>
+  </div>
+
+  <div id="recommended">
+    <div class="headline">Recommended</div>
+    <div class="sub-headline">Customers Who Bought This Item Also Bought</div>
+
+    <div class="list row">
+      <div class="item col-sm-3">
+        <div class="product-img">
+          <img src="assets/images/new-arrivals-01.png" />
+        </div>
+
+        <div class="product-info">
+          <div class="product-name">PRODUCT NAME</div>
+          <div class="product-price">2,290.-</div>
+        </div>
+      </div>
+
+      <div class="item col-sm-3">
+        <div class="product-img">
+          <img src="assets/images/new-arrivals-01.png" />
+        </div>
+
+        <div class="product-info">
+          <div class="product-name">PRODUCT NAME</div>
+          <div class="product-price">2,290.-</div>
+        </div>
+      </div>
+
+      <div class="item col-sm-3">
+        <div class="product-img">
+          <img src="assets/images/new-arrivals-01.png" />
+        </div>
+
+        <div class="product-info">
+          <div class="product-name">PRODUCT NAME</div>
+          <div class="product-price">2,290.-</div>
+        </div>
+      </div>
+
+      <div class="item col-sm-3">
+        <div class="product-img">
+          <img src="assets/images/new-arrivals-01.png" />
+        </div>
+
+        <div class="product-info">
+          <div class="product-name">PRODUCT NAME</div>
+          <div class="product-price">2,290.-</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

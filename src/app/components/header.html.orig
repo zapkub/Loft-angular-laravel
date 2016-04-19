@@ -1,0 +1,46 @@
+<div id="header-wrap" class="container">
+  <div id="logo">
+    <img src="assets/images/logo.gif" alt="" />
+  </div>
+<<<<<<< HEAD
+
+  <nav>
+    <a class="menu-item" href="#">Home</a>
+    <a class="menu-item" href="#">About Us</a>
+    <a class="menu-item" href="#/product">Products</a>
+    <a class="menu-item" href="#">News & Activities</a>
+    <a class="menu-item" href="#">Contact Us</a>
+    <a class="menu-item" href="#">S</a>
+    <a class="menu-item" href="#">M</a>
+    <a class="menu-item" href="#">C</a>
+  </nav>
+=======
+  <div class="menu">
+    <div class="item">
+      <a href="#">home</a>
+    </div>
+    <div class="item">
+      <a href="#">about us</a>
+    </div>
+    <div class="item">
+      <a href="#/product">products</a>
+    </div>
+    <div class="item">
+      <a href="#">news & activities</a>
+    </div>
+
+    <div class="item">
+      <a href="#">contact us</a>
+    </div>
+    <div class="item">
+      <a href="#">search</a>
+    </div>
+    <div class="item">
+      <a href="#">member</a>
+    </div>
+    <div class="item">
+      <a href="#">cart</a>
+    </div>
+  </div>
+>>>>>>> 74356eb9bad0ae280747e789f1be8af2d0cbbb7b
+</div>
